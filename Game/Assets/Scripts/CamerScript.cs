@@ -30,7 +30,7 @@ public class CamerScript : MonoBehaviour
         }
 
         transform.position = target.position - offset * currentZoom;
-        transform.LookAt(target.position + Vector3.up * pitch);
+        transform.LookAt(target.position + Vector3.forward * pitch);
 
         transform.RotateAround(target.position, Vector3.down, currentYaw);
 
