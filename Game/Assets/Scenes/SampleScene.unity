@@ -202,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: e3c5025ddc7a1a245ac7c995ee3ec5c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0823834
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 400138, guid: e3c5025ddc7a1a245ac7c995ee3ec5c1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -289,6 +289,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &1402006245
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402006240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1522311203
 GameObject:
   m_ObjectHideFlags: 0

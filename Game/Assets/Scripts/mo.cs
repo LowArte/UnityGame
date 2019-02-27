@@ -25,14 +25,14 @@ public class mo : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5000))
             {
                 nav.SetDestination(hit.point);
-                nav.isStopped=false;   
+                 
             }
         }
 
         if (Vector3.Distance(transform.position, nav.destination) <= 0.1f)
         {
             anim.SetBool("Walk", false);
-            nav.isStopped = true; ;
+          
         }
     }
     
