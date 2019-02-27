@@ -5,40 +5,45 @@ using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    Vector3 target;
-    private Animator anim;
+    public Vector3 target;
+    public NavMeshAgent nav;
 
-    private NavMeshAgent nav;
+    public PlayerProperty PlayerProperty;
 
     public float rotationSpeed = 5f;
 
     private void Start()
     {
-        nav = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
-    }
 
+        nav = GetComponent<NavMeshAgent>();
+    }
+    /// <summary>
+    /// Передвигает персонажа
+    /// </summary>
     public void PlayerMove()
+    {
+        SetMove();
+        PlayerRotate();
+    }
+    /// <summary>
+    /// Определяет куда пойдет персонаж
+    /// </summary>
+    private void SetMove()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {
-            anim.SetBool("Walk", true);
             if (Physics.Raycast(ray, out RaycastHit hit, 50000))
             {
+                PlayerProperty.isRunning = true;
                 nav.SetDestination(hit.point);
                 target = hit.point;
             }
         }
-
-        if (Vector3.Distance(transform.position, nav.destination) <= 0.1f)
-        {
-            anim.SetBool("Walk", false);
-            target = Vector3.zero;
-        }
-        PlayerRotate();
     }
-
+    /// <summary>
+    /// Определяет угол поворота для персонажа
+    /// </summary>
     private void PlayerRotate()
     {
         if(target != Vector3.zero)
