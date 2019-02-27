@@ -255,12 +255,44 @@ PrefabInstance:
       objectReference: {fileID: 1260735323}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03d10f921b7e9643817d84855d831c2, type: 3}
+--- !u!1 &1260735322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 176537376, guid: 450e9ce41e709264d973c1b6c7731ced,
+    type: 3}
+  m_PrefabInstance: {fileID: 1719214002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1260735323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 176537377, guid: 450e9ce41e709264d973c1b6c7731ced,
     type: 3}
   m_PrefabInstance: {fileID: 1719214002}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260735326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 176537378, guid: 450e9ce41e709264d973c1b6c7731ced,
+    type: 3}
+  m_PrefabInstance: {fileID: 1719214002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260735322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677a6ec873184914bbbfe41b85b49645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1260735328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260735322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3252d85eaee3344fbe850a457209cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterProperty: {fileID: 11400000, guid: a1b15a16e9fec234e8e6ac2db6aa3266, type: 2}
+  characterMovement: {fileID: 1260735326}
 --- !u!1 &1522311203
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +460,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b791f8ee6039c5846b642793dc7723cb, type: 2}
+    - target: {fileID: 176537378, guid: 450e9ce41e709264d973c1b6c7731ced, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 176537378, guid: 450e9ce41e709264d973c1b6c7731ced, type: 3}
+      propertyPath: PlayerProperty
+      value: 
+      objectReference: {fileID: 11400000, guid: a1b15a16e9fec234e8e6ac2db6aa3266,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450e9ce41e709264d973c1b6c7731ced, type: 3}
 --- !u!1 &2135199847
