@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AiControls : MonoBehaviour
 {
-    // Start is called before the first frame update
+    AiControl move;
+    
     void Start()
     {
-        
+        move = GetComponent<AiControl>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        
+        move.Momuve();
     }
+
+  
 }
