@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterInput : MonoBehaviour
 {
     public PlayerProperty PlayerProperty;
+    public SpawnEnemies Spawn;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +18,9 @@ public class CharacterInput : MonoBehaviour
         {
             PlayerProperty.isSprinting = false;
         }
-
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Spawn.SpawnCreeps();
+        }
     }
 }
