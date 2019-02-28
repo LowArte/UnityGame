@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public string suck;
     public Vector3 target;
     public NavMeshAgent nav;
     public PlayerProperty PlayerProperty;
