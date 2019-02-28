@@ -8,4 +8,6 @@ public class PlayerProperty : ScriptableObject
     public bool isDead;
     public bool isUseSkill;
     public bool isRunning;
+
+    public float characterSpeed;
 }

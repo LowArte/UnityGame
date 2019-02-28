@@ -7,7 +7,6 @@ public class CharacterMovement : MonoBehaviour
 {
     public Vector3 target;
     public NavMeshAgent nav;
-
     public PlayerProperty PlayerProperty;
 
     public float rotationSpeed = 5f;
@@ -30,6 +29,7 @@ public class CharacterMovement : MonoBehaviour
     /// </summary>
     private void SetMove()
     {
+        nav.speed = PlayerProperty.characterSpeed;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {
@@ -39,6 +39,11 @@ public class CharacterMovement : MonoBehaviour
                 nav.SetDestination(hit.point);
                 target = hit.point;
             }
+        }
+        if (Vector3.Distance(transform.position, nav.destination) <= 0.1f)
+        {
+            PlayerProperty.isRunning = false;
+            target = Vector3.zero;
         }
     }
     /// <summary>
