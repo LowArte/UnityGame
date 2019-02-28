@@ -10,10 +10,10 @@ public class CharacterMovement : MonoBehaviour
     public PlayerProperty PlayerProperty;
 
     public float rotationSpeed = 5f;
+    public float stopDistance = 1.5f;
 
     private void Start()
     {
-
         nav = GetComponent<NavMeshAgent>();
     }
     /// <summary>
@@ -23,6 +23,32 @@ public class CharacterMovement : MonoBehaviour
     {
         SetMove();
         PlayerRotate();
+        Sprint();
+
+
+    }
+    private void Sprint()
+    {
+        if (PlayerProperty.isSprinting)
+        {
+            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, PlayerProperty.maxSpeed, Time.deltaTime);
+            if(PlayerProperty.characterSpeed > PlayerProperty.maxSpeed)
+            {
+                PlayerProperty.characterSpeed = PlayerProperty.maxSpeed;
+            }
+        }
+        else
+        {
+            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, PlayerProperty.baseSpeed, Time.deltaTime);
+            if(PlayerProperty.characterSpeed < PlayerProperty.baseSpeed)
+            {
+                PlayerProperty.characterSpeed = PlayerProperty.baseSpeed;
+            }
+            if(!PlayerProperty.isRunning)
+            {
+                PlayerProperty.characterSpeed = 0;
+            }
+        }
     }
     /// <summary>
     /// Определяет куда пойдет персонаж
@@ -40,11 +66,20 @@ public class CharacterMovement : MonoBehaviour
                 target = hit.point;
             }
         }
-        if (Vector3.Distance(transform.position, nav.destination) <= 0.1f)
+
+        if (Vector3.Distance(transform.position, nav.destination) <= stopDistance && PlayerProperty.isRunning)
+        {
+            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3*Time.deltaTime);
+            Debug.Log(PlayerProperty.characterSpeed);
+        }
+
+        if (Vector3.Distance(transform.position, nav.destination) == 0)
         {
             PlayerProperty.isRunning = false;
             target = Vector3.zero;
+
         }
+
     }
     /// <summary>
     /// Определяет угол поворота для персонажа

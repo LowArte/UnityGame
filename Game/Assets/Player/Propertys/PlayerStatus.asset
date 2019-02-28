@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   isUseSkill: 0
+  isRunning: 0
+  isSprinting: 0
+  characterSpeed: 0
+  characterSprintingBost: 5
+  baseSpeed: 3
+  maxSpeed: 7
+  minSpeed: 1

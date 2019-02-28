@@ -15,6 +15,6 @@ public class CharacteAnimations : MonoBehaviour
     // Update is called once per frame
     public void Animate()
     {
-        anim.SetBool("Walk", characterProperty.isRunning);
+        anim.SetFloat("WalkSpeed", characterProperty.characterSpeed);
     }
 }
