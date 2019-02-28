@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   isUseSkill: 0
-  isRunning: 1
+  isRunning: 0
   isSprinting: 0
-  characterSpeed: 3.8517828
+  characterSpeed: 0
   characterSprintingBost: 0.5
   baseSpeed: 3
   maxSpeed: 7
@@ -24,6 +24,6 @@ MonoBehaviour:
   characterHP: 1
   characterMP: 1
   damage: 0
-  agility: 15
-  strength: 15
-  intelege: 15
+  agility: 14
+  strength: 12
+  intelege: 18
