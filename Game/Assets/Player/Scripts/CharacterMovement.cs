@@ -8,6 +8,7 @@ public class CharacterMovement : MonoBehaviour
     public Vector3 target;
     public NavMeshAgent nav;
     public PlayerProperty PlayerProperty;
+    public float spid;
 
     public float rotationSpeed = 5f;
     public float stopDistance = 1.5f;
