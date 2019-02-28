@@ -70,14 +70,14 @@ public class CharacterMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, nav.destination) <= stopDistance && PlayerProperty.isRunning)
         {
             PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3*Time.deltaTime);
-            Debug.Log(PlayerProperty.characterSpeed);
+            
         }
 
         if (Vector3.Distance(transform.position, nav.destination) == 0)
         {
             PlayerProperty.isRunning = false;
+            PlayerProperty.isSprinting = false;
             target = Vector3.zero;
-
         }
 
     }

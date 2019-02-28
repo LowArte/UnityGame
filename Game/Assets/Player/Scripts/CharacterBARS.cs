@@ -12,18 +12,13 @@ public class CharacterBARS : MonoBehaviour
     public Text agil;
 
     public PlayerProperty characterProperty;
-    // Start is called before the first frame update
-    void Start()
-    {
-        str.text = "15";
-        intel.text = "15";
-        agil.text = "15";
-        characterProperty.isDead = false;
-    }
-
     // Update is called once per frame
-    void Update()
+    public void BarDraw()
     {
+        str.text = characterProperty.strength.ToString();
+        intel.text = characterProperty.intelege.ToString();
+        agil.text = characterProperty.agility.ToString();
+
         hpbar.fillAmount = characterProperty.characterHP;
         mpbar.fillAmount = characterProperty.characterMP;
         if (hpbar.fillAmount == 0f)
