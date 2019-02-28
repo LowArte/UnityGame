@@ -10,4 +10,11 @@ public class PlayerProperty : ScriptableObject
     public bool isRunning;
 
     public float characterSpeed;
+    public float characterHP;
+    public float characterMP;
+
+    public float damage;
+    public float agility;
+    public float strength;
+    public float intelege;
 }
