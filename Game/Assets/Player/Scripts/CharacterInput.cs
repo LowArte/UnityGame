@@ -18,9 +18,10 @@ public class CharacterInput : MonoBehaviour
         {
             PlayerProperty.isSprinting = false;
         }
+
         if (Input.GetKeyDown(KeyCode.V))
         {
-            Spawn.SpawnCreeps();
+            Spawn.StartWawe();
         }
     }
 }

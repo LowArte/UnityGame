@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using System.Linq;
 
-public class SpawnEnemies : MonoBehaviour
+public class SpawnEnemies : MonoBehaviour 
 {
     [SerializeField]
     public List<GameObject> Enemys;
@@ -14,6 +13,10 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField]
     public List<GameObject> CurrentEnemys;
 
+    public PlayerProperty player;
+
+    public bool isWaweEnd;
+    public float spawnTime = 1.5f;
     public int maxWaveCount = 5;
     public int currentWawe = 0;
     public int spawnMobsOnWay = 10;
@@ -28,16 +31,41 @@ public class SpawnEnemies : MonoBehaviour
     /// <summary>
     /// Спавнит крипов
     /// </summary>
-    public void SpawnCreeps()
+    public void StartWawe()
     {
-        if(maxWaveCount != currentWawe)
+        isWaweEnd = false;
+        if (maxWaveCount != currentWawe)
         {
             foreach(var spawn in SpawnPoints)
             {
                 StartCoroutine(SpawnCreepOnSpawn(spawn as Transform));
             }
-            currentWawe++;
+        }      
+    }
+    /// <summary>
+    /// Удаляет мобов которые убиты
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator KillingEnemy()
+    {
+        Debug.Log(IsAnyoneEnemyAlive());
+        while (!IsAnyoneEnemyAlive())
+        {
+            int sdvig = 0;
+            for(int i=0;i<CurrentEnemys.Count;i++)
+            {
+                if (CurrentEnemys[i-sdvig].GetComponent<AiControl>().currentMobAI.isdead)
+                {
+                    Destroy(CurrentEnemys[i - sdvig]);
+                    CurrentEnemys.Remove(CurrentEnemys[i - sdvig]);
+                    sdvig++;
+                }
+            }
+            yield return null;
         }
+        currentWawe++;
+        isWaweEnd = true;
+        Debug.Log("Все мертвы");
     }
     /// <summary>
     /// Проверка на то есть ли живой моб или нет
@@ -45,7 +73,15 @@ public class SpawnEnemies : MonoBehaviour
     /// <returns></returns>
     public bool IsAnyoneEnemyAlive()
     {
-        return CurrentEnemys.Count(x => x.GetComponent<PropertyAi>().isdead == false) == 0 ? true : false;
+        return CurrentEnemys.Count == 0 ? true : false;
+    }
+    /// <summary>
+    /// Спавнит крипов
+    /// </summary>
+    /// <param name="spawn"></param>
+    public void SpawnEnemy(Transform spawn)
+    {
+        CurrentEnemys.Add(Instantiate(Enemys[UnityEngine.Random.Range(0, Enemys.Count)], spawn.transform.position, Quaternion.identity));
     }
     /// <summary>
     /// Куратина для спавна крипов 
@@ -57,15 +93,8 @@ public class SpawnEnemies : MonoBehaviour
         for (int i = 0; i < mobOnSpawn; i++)
         {
             SpawnEnemy(spawn);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(spawnTime);
         }
-    }
-    /// <summary>
-    /// Спавнит крипов
-    /// </summary>
-    /// <param name="spawn"></param>
-    public void SpawnEnemy(Transform spawn)
-    {
-        CurrentEnemys.Add(Instantiate(Enemys[UnityEngine.Random.Range(0, Enemys.Count)], spawn.transform.position, Quaternion.identity));
+        yield return StartCoroutine(KillingEnemy());
     }
 }
