@@ -9,7 +9,7 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField]
     public List<GameObject> Enemys;
     [SerializeField]
-    public List<Transform> spawnPoints;
+    public List<Transform> SpawnPoints;
     [SerializeField]
     public List<GameObject> CurrentEnemys;
 
@@ -22,20 +22,15 @@ public class SpawnEnemies : MonoBehaviour
 
     void Start()
     {
-        mobOnSpawn = (spawnMobsOnWay / spawnPoints.Count);
+        mobOnSpawn = (spawnMobsOnWay / SpawnPoints.Count);
     }
 
-    void Update()
-    {
-
-    }
 
     public void SpawnCreeps()
     {
         if(maxWaveCount != currentWawe)
         {
-            Debug.Log(mobOnSpawn);
-            foreach(var spawn in spawnPoints)
+            foreach(var spawn in SpawnPoints)
             {
                 StartCoroutine(SpawnCreepOnSpawn(spawn as Transform));
             }
@@ -51,7 +46,6 @@ public class SpawnEnemies : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
     }
-
 
     public void SpawnEnemy(Transform spawn)
     {
