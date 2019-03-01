@@ -491,15 +491,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemys:
-<<<<<<< HEAD
+
   - {fileID: 4660454521602454392, guid: 845f08c3246bb874ea3030aec8e5f688, type: 3}
   SpawnPoints: []
-=======
+
   - {fileID: 6562003585472701251, guid: 458e6aac711155f409d50bc0a3311796, type: 3}
   SpawnPoints:
   - {fileID: 500228812}
   - {fileID: 329466837}
->>>>>>> c2d38d7702a332476c985d54ebf93bcef4b1ef7d
+
   CurrentEnemys: []
   maxWaveCount: 5
   currentWawe: 0
@@ -519,8 +519,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
+
 --- !u!114 &1249643421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +540,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1719214002}
   m_PrefabAsset: {fileID: 0}
->>>>>>> c2d38d7702a332476c985d54ebf93bcef4b1ef7d
+
 --- !u!1 &1522311203
 GameObject:
   m_ObjectHideFlags: 0
