@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260735323, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06867933
+      value: -3.32
       objectReference: {fileID: 0}
     - target: {fileID: 1260735323, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260735323, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.93920755
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 1260735323, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -301,6 +301,14 @@ PrefabInstance:
     - target: {fileID: 1260735323, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 260527960, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 260527960, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 260527954, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
       propertyPath: Spawn
@@ -440,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
@@ -622,7 +630,7 @@ Transform:
   m_LocalScale: {x: 0.11964, y: 0.27771, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.014, y: -87.425, z: 0.314}
 --- !u!54 &1522311208
 Rigidbody:

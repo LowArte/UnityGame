@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class AiControl : MonoBehaviour
-{
-
-    
+{    
     public float dist;
     public PropertyAi pa;
     NavMeshAgent nav;
@@ -14,30 +12,33 @@ public class AiControl : MonoBehaviour
     Transform target;
     
     Animator anim;
+
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
     }
+
     public void Momuve()
     {
         dist = Vector3.Distance(target.transform.position, transform.position);
         if (dist > pa.radius)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("idle");
-
+            anim.SetTrigger("idle");
         }
+
         if (dist < pa.radius)
         {
             
             nav.SetDestination(target.position);
-            gameObject.GetComponent<Animator>().SetTrigger("run");
+            anim.SetTrigger("run");
 
         }
+
         if (dist < pa.atdist)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("attack");
+           anim.SetTrigger("attack");
 
         }
 
