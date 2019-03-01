@@ -23,12 +23,12 @@ public class AiControl : MonoBehaviour
     public void Momuve()
     {
         dist = Vector3.Distance(target.transform.position, transform.position);
-        if (dist > pa.radius)
+        if (dist > pa.AgrRadius)
         {
             anim.SetTrigger("idle");
         }
 
-        if (dist < pa.radius)
+        if (dist < pa.AgrRadius)
         {
             
             nav.SetDestination(target.position);
