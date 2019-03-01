@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CharacterInput : MonoBehaviour
 {
-    public PlayerProperty PlayerProperty;
+    PlayerProperty PlayerProperty;
     public SpawnEnemies Spawn;
     // Update is called once per frame
+    void Start()
+    {
+        PlayerProperty = GetComponent<CharacterController>().player;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && PlayerProperty.isRunning)

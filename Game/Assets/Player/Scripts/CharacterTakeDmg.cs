@@ -10,7 +10,7 @@ public class CharacterTakeDmg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GetComponent<CharacterController>().player;
     }
 
     // Update is called once per frame

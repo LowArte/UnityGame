@@ -54,7 +54,7 @@ public class SpawnEnemies : MonoBehaviour
             int sdvig = 0;
             for(int i=0;i<CurrentEnemys.Count;i++)
             {
-                if (CurrentEnemys[i-sdvig].GetComponent<AiControl>().currentMobAI.isdead)
+                if (CurrentEnemys[i-sdvig].GetComponent<AiControl>().pa.isdead)
                 {
                     Destroy(CurrentEnemys[i - sdvig]);
                     CurrentEnemys.Remove(CurrentEnemys[i - sdvig]);

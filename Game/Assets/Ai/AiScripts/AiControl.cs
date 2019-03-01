@@ -7,7 +7,6 @@ public class AiControl : MonoBehaviour
 {    
     public float dist;
     public PropertyAi pa;
-    public PropertyAi currentMobAI;
     NavMeshAgent nav;
 
     Transform target;
@@ -19,7 +18,6 @@ public class AiControl : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
-        currentMobAI = new PropertyAi();
     }
 
     public void Momuve()

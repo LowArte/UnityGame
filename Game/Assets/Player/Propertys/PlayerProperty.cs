@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Character/Status")]
-public class PlayerProperty : ScriptableObject
+public class PlayerProperty : MonoBehaviour
 {
     public bool isDead;
     public bool isUseSkill;
