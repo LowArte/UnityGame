@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AiControl : MonoBehaviour
 {
 
-    public AiAnimat setanim;
+    
     public float dist;
     public PropertyAi pa;
     NavMeshAgent nav;
