@@ -11,7 +11,7 @@ public class PropertyAi : ScriptableObject
     public bool isdead;
     public float hp;
     
-    public float radius;
+    public float AgrRadius;
     public float atdist;
     
 }

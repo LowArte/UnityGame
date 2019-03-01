@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850066d823ede1d4ba7fd5d03eeff75e, type: 3}
   m_Name: AiProp
   m_EditorClassIdentifier: 
+
   stop: 0
+
+  stop: 1
+
   speed: 0
   isdead: 0
   hp: 0
   radius: 20
+
   atdist: 3
+
+  atdist: 10
+
