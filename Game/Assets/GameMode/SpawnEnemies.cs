@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using System.Linq;
 
 public class SpawnEnemies : MonoBehaviour
 {
@@ -24,8 +25,9 @@ public class SpawnEnemies : MonoBehaviour
     {
         mobOnSpawn = (spawnMobsOnWay / SpawnPoints.Count);
     }
-
-
+    /// <summary>
+    /// Спавнит крипов
+    /// </summary>
     public void SpawnCreeps()
     {
         if(maxWaveCount != currentWawe)
@@ -37,7 +39,19 @@ public class SpawnEnemies : MonoBehaviour
             currentWawe++;
         }
     }
-
+    /// <summary>
+    /// Проверка на то есть ли живой моб или нет
+    /// </summary>
+    /// <returns></returns>
+    public bool IsAnyoneEnemyAlive()
+    {
+        return CurrentEnemys.Count(x => x.GetComponent<PropertyAi>().isdead == false) == 0 ? true : false;
+    }
+    /// <summary>
+    /// Куратина для спавна крипов 
+    /// </summary>
+    /// <param name="spawn">Спавн</param>
+    /// <returns></returns>
     IEnumerator SpawnCreepOnSpawn(Transform spawn)
     {
         for (int i = 0; i < mobOnSpawn; i++)
@@ -46,7 +60,10 @@ public class SpawnEnemies : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
     }
-
+    /// <summary>
+    /// Спавнит крипов
+    /// </summary>
+    /// <param name="spawn"></param>
     public void SpawnEnemy(Transform spawn)
     {
         CurrentEnemys.Add(Instantiate(Enemys[UnityEngine.Random.Range(0, Enemys.Count)], spawn.transform.position, Quaternion.identity));
