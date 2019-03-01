@@ -1384,7 +1384,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f56646064bf847458bb4bd5252f8623, type: 3}
+  - {fileID: 2100000, guid: 38f540354b4a9a641b8ea8adc009632b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1804,7 +1804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3a91803f03c3c42872d0bfe5b38b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setanim: {fileID: 0}
   dist: 0
   pa: {fileID: 11400000, guid: d0fbc6f17227be54ab3291bef22c0b29, type: 2}
 --- !u!114 &2911005386732734652
