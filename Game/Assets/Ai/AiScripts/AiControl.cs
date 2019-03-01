@@ -38,6 +38,7 @@ public class AiControl : MonoBehaviour
 
         if (dist < pa.atdist)
         {
+            
            anim.SetTrigger("attack");
 
         }
