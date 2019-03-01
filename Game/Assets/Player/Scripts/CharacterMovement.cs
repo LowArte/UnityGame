@@ -26,8 +26,7 @@ public class CharacterMovement : MonoBehaviour
         SetMove();
         PlayerRotate();
         Sprint();
-
-
+        CorrectSpeed();
     }
     private void Sprint()
     {
@@ -69,10 +68,13 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
+    }
+
+    private void CorrectSpeed()
+    {
         if (Vector3.Distance(transform.position, nav.destination) <= stopDistance && PlayerProperty.isRunning)
         {
-            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3*Time.deltaTime);
-            
+            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3 * Time.deltaTime);
         }
 
         if (Vector3.Distance(transform.position, nav.destination) == 0)
@@ -81,7 +83,6 @@ public class CharacterMovement : MonoBehaviour
             PlayerProperty.isSprinting = false;
             target = Vector3.zero;
         }
-
     }
     /// <summary>
     /// Определяет угол поворота для персонажа
