@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnEnemies: {fileID: 0}
-  text: {fileID: 0}
+  text: {fileID: 2094767973}
 --- !u!1001 &1282737509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,6 +723,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2094767973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 625338111, guid: ad13ec423010131438b51ce210b1aef8,
+    type: 3}
+  m_PrefabInstance: {fileID: 288625641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135199847
 GameObject:
   m_ObjectHideFlags: 0
