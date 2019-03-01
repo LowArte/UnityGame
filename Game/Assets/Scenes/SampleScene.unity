@@ -407,17 +407,17 @@ PrefabInstance:
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.07
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.65
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 4358691217450614978, guid: b03d10f921b7e9643817d84855d831c2,
         type: 3}
@@ -500,12 +500,12 @@ MonoBehaviour:
   Enemys: []
   SpawnPoints: []
 
+
   Enemys:
   - {fileID: 6562003585472701251, guid: 458e6aac711155f409d50bc0a3311796, type: 3}
   SpawnPoints:
   - {fileID: 500228812}
   - {fileID: 329466837}
-
   CurrentEnemys: []
   maxWaveCount: 5
   currentWawe: 0
@@ -631,6 +631,10 @@ PrefabInstance:
   SpawnEnemies: {fileID: 1249643419}
   text: {fileID: 364524131}
 
+
+  SpawnEnemies: {fileID: 1249643419}
+  text: {fileID: 364524131}
+
 --- !u!1 &1522311203
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +744,7 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 
+
 --- !u!1001 &1719214002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,6 +822,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
 
+
 --- !u!1 &2135199847
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +888,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 94c3144d3e2a53347a1f84412a290671, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
