@@ -26,8 +26,8 @@ public class CharacterMovement : MonoBehaviour
         SetMove();
         PlayerRotate();
         Sprint();
-        CorrectSpeed();
     }
+
     private void Sprint()
     {
         if (PlayerProperty.isSprinting)
@@ -45,10 +45,12 @@ public class CharacterMovement : MonoBehaviour
             {
                 PlayerProperty.characterSpeed = PlayerProperty.baseSpeed;
             }
+
             if(!PlayerProperty.isRunning)
             {
                 PlayerProperty.characterSpeed = 0;
             }
+
         }
     }
     /// <summary>
@@ -67,21 +69,22 @@ public class CharacterMovement : MonoBehaviour
                 target = hit.point;
             }
         }
-
-    }
-
-    private void CorrectSpeed()
-    {
-        if (Vector3.Distance(transform.position, nav.destination) <= stopDistance && PlayerProperty.isRunning)
-        {
-            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3 * Time.deltaTime);
-        }
-
-        if (Vector3.Distance(transform.position, nav.destination) == 0)
+        CorrectSpeed();
+        if (Vector3.Distance(transform.position, nav.destination) <= 0.25)
         {
             PlayerProperty.isRunning = false;
             PlayerProperty.isSprinting = false;
             target = Vector3.zero;
+        }
+    }
+    /// <summary>
+    /// Корректирует скорость перед отсановкой
+    /// </summary>
+    private void CorrectSpeed()
+    {
+        if (Vector3.Distance(transform.position, nav.destination) < stopDistance && PlayerProperty.isRunning)
+        {
+            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3 * Time.deltaTime);
         }
     }
     /// <summary>
