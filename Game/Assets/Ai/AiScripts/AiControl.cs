@@ -30,12 +30,10 @@ public class AiControl : MonoBehaviour
             anim.SetTrigger("idle");
         }
 
-        if (dist < pa.AgrRadius)
+        if ((dist < pa.AgrRadius) && (dist > pa.atdist))
         {
-            
             nav.SetDestination(target.position);
             anim.SetTrigger("run");
-
         }
 
         if (dist < pa.atdist)
