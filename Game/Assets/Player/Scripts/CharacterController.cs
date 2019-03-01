@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    CharacterTakeDmg takedmg;
     CharacterMovement movement;
     CharacteAnimations animation;
+    
     CharacterBARS bar;
     // Start is called before the first frame update
     void Start()
     {
+      
+        takedmg = GetComponent<CharacterTakeDmg>();
+        bar = GetComponent<CharacterBARS>();
         movement = GetComponent<CharacterMovement>();
         animation = GetComponent<CharacteAnimations>();
-        bar = GetComponent<CharacterBARS>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        bar.BarDraw();
         movement.PlayerMove();
         animation.Animate();
-        bar.BarDraw();
+       
+        
+
     }
+   
 }

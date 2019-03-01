@@ -6,7 +6,7 @@ using UnityEngine;
 public class PropertyAi : ScriptableObject
 {
     public bool stop;
-   
+    public float damage;
     public float speed;
     public bool isdead;
     public float hp;
