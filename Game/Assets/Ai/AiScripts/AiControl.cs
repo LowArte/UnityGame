@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class AiControl : MonoBehaviour
 {
 
-    
+    public AiAnimat setanim;
     public float dist;
     public PropertyAi pa;
     NavMeshAgent nav;
-    
+   // public PlayerProperty PlayerProperty;
     Transform target;
     
     Animator anim;
@@ -25,24 +25,20 @@ public class AiControl : MonoBehaviour
         dist = Vector3.Distance(target.transform.position, transform.position);
         if (dist > pa.radius)
         {
-            nav.enabled = false;
-            //anim.SetBool("walk",false);
+            gameObject.GetComponent<Animator>().SetTrigger("idle");
 
         }
-        if (dist < pa.radius & dist > pa.atdist)
+        if (dist < pa.radius)
         {
-            nav.enabled = true;
+            
             nav.SetDestination(target.position);
-            //  anim.SetBool("walk", true);
-
+            gameObject.GetComponent<Animator>().SetTrigger("run");
 
         }
         if (dist < pa.atdist)
         {
+            gameObject.GetComponent<Animator>().SetTrigger("attack");
 
-            // anim.SetBool("walk", false);
-            //  anim.SetBool("attak", true);
-            nav.enabled = true;
         }
 
 
