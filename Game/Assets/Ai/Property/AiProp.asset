@@ -16,6 +16,5 @@ MonoBehaviour:
   speed: 0
   isdead: 0
   hp: 0
-  dist: 0
   radius: 20
   atdist: 2
