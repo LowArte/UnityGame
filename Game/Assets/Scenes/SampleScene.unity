@@ -247,8 +247,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
-<<<<<<< HEAD
-=======
+
 --- !u!1001 &288625641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,7 +319,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 288625641}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
+
 --- !u!1 &329466836
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,22 +496,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cfe1f5f42d1af4f9dd679940972eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   Enemys: []
   SpawnPoints: []
-=======
-=======
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
+
   Enemys:
   - {fileID: 6562003585472701251, guid: 458e6aac711155f409d50bc0a3311796, type: 3}
   SpawnPoints:
   - {fileID: 500228812}
   - {fileID: 329466837}
-<<<<<<< HEAD
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
-=======
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
+
   CurrentEnemys: []
   maxWaveCount: 5
   currentWawe: 0
@@ -544,8 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ecad6a67e0b4fb2f8f6052d44829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   SpawnEnemies: {fileID: 0}
   text: {fileID: 625338111}
 --- !u!4 &1260735323 stripped
@@ -628,14 +620,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458e6aac711155f409d50bc0a3311796, type: 3}
-=======
+
   SpawnEnemies: {fileID: 1249643419}
   text: {fileID: 364524131}
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
-=======
+
+
   SpawnEnemies: {fileID: 1249643419}
   text: {fileID: 364524131}
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
+
+  SpawnEnemies: {fileID: 1249643419}
+  text: {fileID: 364524131}
+
 --- !u!1 &1522311203
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,8 +739,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 --- !u!1001 &1719214002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,10 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad13ec423010131438b51ce210b1aef8, type: 3}
-=======
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
-=======
->>>>>>> 13371bc2a687b0939a821f7fea34bf3f5c08fbfb
+
 --- !u!1 &2135199847
 GameObject:
   m_ObjectHideFlags: 0
