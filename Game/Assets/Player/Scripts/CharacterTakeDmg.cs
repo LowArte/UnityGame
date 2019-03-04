@@ -7,6 +7,9 @@ public class CharacterTakeDmg : MonoBehaviour
 {
     public PropertyAi pa;
     public PlayerProperty Player;
+    public CamerScript maincam;
+    public GameObject heroprefab;
+    public GameObject current;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +20,20 @@ public class CharacterTakeDmg : MonoBehaviour
    
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "damage")
+        
+        if (other.tag == "damage")
             {
-                Player.characterHP -= pa.damage;
+                 Player.characterHP -= pa.damage;
             }
+      /* else if (other.tag == "selecthero")
+            {
+                maincam.target = heroprefab.transform;
+                Destroy(current);
+            }*/
         }
+   
+
+       
     
+
 }

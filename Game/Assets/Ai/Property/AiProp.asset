@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AiProp
   m_EditorClassIdentifier: 
   stop: 0
+  damage: 0.1
   speed: 0
   isdead: 0
   hp: 0
