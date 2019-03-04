@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterInput : MonoBehaviour
 {
     PlayerProperty PlayerProperty;
+    public Damage damage;
     public SpawnEnemies Spawn;
     // Update is called once per frame
     void Start()
@@ -27,6 +28,12 @@ public class CharacterInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             Spawn.StartWawe();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Attack");
+            damage.FindAngleAndSetAttack();
         }
     }
 }
