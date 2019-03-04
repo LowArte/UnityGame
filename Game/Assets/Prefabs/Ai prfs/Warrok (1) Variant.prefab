@@ -279,6 +279,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7758682801711966021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665115118393797250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aee6f074a27e1f47b1f391d6d07dfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pa: {fileID: 11400000, guid: d0fbc6f17227be54ab3291bef22c0b29, type: 2}
+  player: {fileID: 11400000, guid: a1b15a16e9fec234e8e6ac2db6aa3266, type: 2}
+  hpbar: {fileID: 1551815040}
 --- !u!1001 &535881753047468481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 6562003585472701251, guid: 458e6aac711155f409d50bc0a3311796,
         type: 3}
       propertyPath: m_Name
-      value: Warrok (1)
+      value: Warrok (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8959834297538088398, guid: 458e6aac711155f409d50bc0a3311796,
         type: 3}
@@ -423,6 +438,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458e6aac711155f409d50bc0a3311796, type: 3}
+--- !u!1 &6665115118393797250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6562003585472701251, guid: 458e6aac711155f409d50bc0a3311796,
+    type: 3}
+  m_PrefabInstance: {fileID: 535881753047468481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8878965756132099087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8959834297538088398, guid: 458e6aac711155f409d50bc0a3311796,
