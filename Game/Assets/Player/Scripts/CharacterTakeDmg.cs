@@ -13,7 +13,7 @@ public class CharacterTakeDmg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GetComponent<CharacterController>().player;
+      
     }
 
     // Update is called once per frame
@@ -23,17 +23,17 @@ public class CharacterTakeDmg : MonoBehaviour
         
         if (other.tag == "damage")
             {
-                 Player.characterHP -= pa.damage;
+                Debug.Log("asdd");
+                Player.characterHP -= pa.damage;
+            /* maincam.target = heroprefab.transform;
+                Destroy(current);*/
             }
-      /* else if (other.tag == "selecthero")
-            {
-                maincam.target = heroprefab.transform;
-                Destroy(current);
-            }*/
+        
         }
    
 
-       
-    
+
+
+
 
 }
