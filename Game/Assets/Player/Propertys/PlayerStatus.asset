@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc9f672745344c4a8f0a4c1c136c2da, type: 3}
+  m_Name: PlayerStatus
+  m_EditorClassIdentifier: 
+  isDead: 1
+  isUseSkill: 0
+  isRunning: 0
+  isSprinting: 0
+  characterSpeed: 0
+  characterSprintingBost: 0.5
+  baseSpeed: 3
+  maxSpeed: 7
+  minSpeed: 1
+  characterHP: 1
+  characterMP: 1
+  damage: 0
+  agility: 14
+  strength: 12
+  intelege: 18

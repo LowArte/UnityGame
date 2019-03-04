@@ -6,6 +6,7 @@ TagManager:
   tags:
   - damage
   - Enemy
+  - selecthero
   layers:
   - Default
   - TransparentFX
