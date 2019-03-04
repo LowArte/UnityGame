@@ -20,8 +20,13 @@ public class AiTakeDamage : MonoBehaviour
     {
         if (pa.hp > 0)
         {
+            
             pa.hp = pa.hp - player.damage;
 
+        }
+        if (pa.hp <= 0)
+        {
+            pa.isdead = true;
         }
     }
 }
