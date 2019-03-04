@@ -17,12 +17,7 @@ public class Damage : MonoBehaviour
             Enemys.Add(other.gameObject);
     }
 
-
-    private void OnTriggerExit(Collider other)
-    {
-        Enemys.Remove(other.gameObject);
-    }
-    public void FindAngleAndSetAttack()
+    private void Update()
     {
         int sdvig = 0;
         for (int i = 0; i < Enemys.Count; i++)
@@ -33,6 +28,13 @@ public class Damage : MonoBehaviour
                 sdvig++;
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Enemys.Remove(other.gameObject);
+    }
+    public void FindAngleAndSetAttack()
+    {
         foreach (var other in Enemys)
         {
             if(other == null)
@@ -63,9 +65,4 @@ public class Damage : MonoBehaviour
         collider.radius = atcDistance;   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

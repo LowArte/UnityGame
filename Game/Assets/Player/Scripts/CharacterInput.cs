@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterInput : MonoBehaviour
 {
-    PlayerProperty PlayerProperty;
+    public PlayerProperty PlayerProperty;
     public Damage damage;
     public SpawnEnemies Spawn;
     public Canvas ShopUI;
@@ -15,7 +15,6 @@ public class CharacterInput : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        PlayerProperty = GetComponent<CharacterController>().player;
         //ShopUI.enabled = false;
     }
 

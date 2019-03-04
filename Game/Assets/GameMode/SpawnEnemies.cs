@@ -15,7 +15,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public PlayerProperty player;
 
-    public bool isWaweEnd = true;
+    public bool isWaweEnd;
     public float spawnTime = 1.5f;
     public int maxWaveCount = 5;
     public int currentWawe = 0;
@@ -49,6 +49,7 @@ public class SpawnEnemies : MonoBehaviour
     /// <returns></returns>
     IEnumerator KillingEnemy()
     {
+        Debug.Log(IsAnyoneEnemyAlive());
         while (!IsAnyoneEnemyAlive())
         {
             int sdvig = 0;
@@ -61,11 +62,11 @@ public class SpawnEnemies : MonoBehaviour
                     sdvig++;
                 }
             }
+            yield return null;
         }
         currentWawe++;
         isWaweEnd = true;
         Debug.Log("Все мертвы");
-        yield return null;
     }
     /// <summary>
     /// Проверка на то есть ли живой моб или нет
