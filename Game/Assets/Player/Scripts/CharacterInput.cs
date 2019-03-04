@@ -41,6 +41,7 @@ public class CharacterInput : MonoBehaviour
         {
             Debug.Log("Attack");
             damage.FindAngleAndSetAttack();
+        }
         if (Input.GetKeyDown(KeyCode.B))
         {
             if (Input.GetKeyDown(KeyCode.H))

@@ -23,21 +23,6 @@ public class Damage : MonoBehaviour
     }
     public void FindAngleAndSetAttack()
     {
-        foreach(var other in Enemys)
-        {
-            if (Enemys[i - sdvig] == null)
-            {
-                Enemys.Remove(Enemys[i - sdvig]);
-                sdvig++;
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        Enemys.Remove(other.gameObject);
-    }
-    public void FindAngleAndSetAttack()
-    {
         foreach (var other in Enemys)
         {
             if(other == null)
