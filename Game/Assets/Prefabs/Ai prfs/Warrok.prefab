@@ -1534,36 +1534,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.12759474, y: 0.28934312, z: 0.0956558}
     m_Extent: {x: 0.9908383, y: 1.1074835, z: 0.75061584}
   m_DirtyAABB: 0
---- !u!1 &5130787197843500595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4024756958634710048}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4024756958634710048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5130787197843500595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8959834297538088398}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5151142550115631352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,11 +1733,10 @@ GameObject:
   - component: {fileID: 1134308691051249431}
   - component: {fileID: 3274925452219468326}
   - component: {fileID: 2911005386732734652}
-  - component: {fileID: 7343527111944367882}
   - component: {fileID: 4282828670225667575}
   m_Layer: 0
   m_Name: Warrok
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,7 +1754,6 @@ Transform:
   m_Children:
   - {fileID: 7071986486186861605}
   - {fileID: 6525016761585188575}
-  - {fileID: 4024756958634710048}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1872,24 +1840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da603dba1062189418048bba7f79ce1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!143 &7343527111944367882
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6562003585472701251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &4282828670225667575
 MonoBehaviour:
   m_ObjectHideFlags: 0

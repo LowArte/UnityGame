@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterInput : MonoBehaviour
 {
     PlayerProperty PlayerProperty;
+    public Damage damage;
     public SpawnEnemies Spawn;
     public Canvas ShopUI;
     public Image helmet;
@@ -34,6 +35,11 @@ public class CharacterInput : MonoBehaviour
         {
             Spawn.StartWawe();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Attack");
+            damage.FindAngleAndSetAttack();
         if (Input.GetKeyDown(KeyCode.B))
         {
             if (Input.GetKeyDown(KeyCode.H))
@@ -49,6 +55,7 @@ public class CharacterInput : MonoBehaviour
 
             }
             ShopUI.enabled = true;
+
         }
     }
 }

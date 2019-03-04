@@ -7,6 +7,7 @@ public class CharacterTakeDmg : MonoBehaviour
 {
     public PropertyAi pa;
     public PlayerProperty Player;
+
     public CamerScript maincam;
     public GameObject heroprefab;
     public GameObject current;
@@ -15,7 +16,6 @@ public class CharacterTakeDmg : MonoBehaviour
     {
       
     }
-
     // Update is called once per frame
    
         void OnTriggerEnter(Collider other)
