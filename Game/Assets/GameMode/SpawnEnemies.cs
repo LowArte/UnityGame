@@ -15,7 +15,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public PlayerProperty player;
 
-    public bool isWaweEnd;
+    public bool isWaweEnd = true;
     public float spawnTime = 1.5f;
     public int maxWaveCount = 5;
     public int currentWawe = 0;
@@ -40,7 +40,8 @@ public class SpawnEnemies : MonoBehaviour
             {
                 StartCoroutine(SpawnCreepOnSpawn(spawn as Transform));
             }
-        }      
+        }
+        StartCoroutine(KillingEnemy());
     }
     /// <summary>
     /// Удаляет мобов которые убиты
@@ -48,24 +49,23 @@ public class SpawnEnemies : MonoBehaviour
     /// <returns></returns>
     IEnumerator KillingEnemy()
     {
-        Debug.Log(IsAnyoneEnemyAlive());
         while (!IsAnyoneEnemyAlive())
         {
             int sdvig = 0;
             for(int i=0;i<CurrentEnemys.Count;i++)
             {
-                if (CurrentEnemys[i-sdvig].GetComponent<AiControl>().pa.isdead)
+                if (CurrentEnemys[i-sdvig] == null)
                 {
                     Destroy(CurrentEnemys[i - sdvig]);
                     CurrentEnemys.Remove(CurrentEnemys[i - sdvig]);
                     sdvig++;
                 }
             }
-            yield return null;
         }
         currentWawe++;
         isWaweEnd = true;
         Debug.Log("Все мертвы");
+        yield return null;
     }
     /// <summary>
     /// Проверка на то есть ли живой моб или нет
@@ -95,6 +95,5 @@ public class SpawnEnemies : MonoBehaviour
             SpawnEnemy(spawn);
             yield return new WaitForSeconds(spawnTime);
         }
-        yield return StartCoroutine(KillingEnemy());
     }
 }

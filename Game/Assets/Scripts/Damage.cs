@@ -17,14 +17,29 @@ public class Damage : MonoBehaviour
             Enemys.Add(other.gameObject);
     }
 
+
     private void OnTriggerExit(Collider other)
     {
         Enemys.Remove(other.gameObject);
     }
     public void FindAngleAndSetAttack()
     {
-        foreach(var other in Enemys)
+        int sdvig = 0;
+        for (int i = 0; i < Enemys.Count; i++)
         {
+            if (Enemys[i - sdvig] == null)
+            {
+                Enemys.Remove(Enemys[i - sdvig]);
+                sdvig++;
+            }
+        }
+        foreach (var other in Enemys)
+        {
+            if(other == null)
+            {
+                Enemys.Remove(other);
+                continue;
+            }
             Vector3 targetPos = other.transform.position;
             targetPos.y = transform.position.y;
 
