@@ -60,16 +60,9 @@
      <Compile Include="Assets\GameMode\GameStates.cs" />
      <Compile Include="Assets\GameMode\SpawnEnemies.cs" />
      <Compile Include="Assets\Player\Propertys\PlayerProperty.cs" />
-     <Compile Include="Assets\Player\Scripts\CharacteAnimations.cs" />
-     <Compile Include="Assets\Player\Scripts\CharacterBARS.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterController.cs" />
-     <Compile Include="Assets\Player\Scripts\CharacterInput.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMovement.cs" />
-     <Compile Include="Assets\Player\Scripts\CharacterTakeDmg.cs" />
-     <Compile Include="Assets\Prefabs\costumer\shop.cs" />
-     <Compile Include="Assets\Prefabs\scene\selecthero\selecthero.cs" />
      <Compile Include="Assets\Scripts\CamerScript.cs" />
-     <Compile Include="Assets\Scripts\Damage.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/project/Unity/UnityGame/Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

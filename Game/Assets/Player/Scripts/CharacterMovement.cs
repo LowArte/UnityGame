@@ -1,100 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public string suck;
-    public Vector3 target;
-    public NavMeshAgent nav;
-    public PlayerProperty PlayerProperty;
-    public float spid;
+    [SerializeField]
+    private float speed = 3f;
+    private float x;
+    private float y;
 
-    public float rotationSpeed = 5f;
-    public float stopDistance = 1.5f;
+    private Animator animator;
 
-    private void Start()
+    public void Start()
     {
-        nav = GetComponent<NavMeshAgent>();
-    }
-    /// <summary>
-    /// Передвигает персонажа
-    /// </summary>
-    public void PlayerMove()
-    {
-        SetMove();
-        PlayerRotate();
-        Sprint();
+        animator = GetComponent<Animator>();
     }
 
-    private void Sprint()
+    public void Move()
     {
-        if (PlayerProperty.isSprinting)
-        {
-            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, PlayerProperty.maxSpeed, Time.deltaTime);
-            if(PlayerProperty.characterSpeed > PlayerProperty.maxSpeed)
-            {
-                PlayerProperty.characterSpeed = PlayerProperty.maxSpeed;
-            }
-        }
-        else
-        {
-            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, PlayerProperty.baseSpeed, Time.deltaTime);
-            if(PlayerProperty.characterSpeed < PlayerProperty.baseSpeed)
-            {
-                PlayerProperty.characterSpeed = PlayerProperty.baseSpeed;
-            }
+        x = Input.GetAxis("Vertical");
+        y = Input.GetAxis("Horizontal");
 
-            if(!PlayerProperty.isRunning)
-            {
-                PlayerProperty.characterSpeed = 0;
-            }
-
-        }
-    }
-    /// <summary>
-    /// Определяет куда пойдет персонаж
-    /// </summary>
-    private void SetMove()
-    {
-        nav.speed = PlayerProperty.characterSpeed;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(KeyCode.W))
         {
-            if (Physics.Raycast(ray, out RaycastHit hit, 50000))
-            {
-                PlayerProperty.isRunning = true;
-                nav.SetDestination(hit.point);
-                target = hit.point;
-            }
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.y, 0), 0.2f);
         }
-        CorrectSpeed();
-        if (Vector3.Distance(transform.position, nav.destination) <= 0.25)
+        if (Input.GetKey(KeyCode.A))
         {
-            PlayerProperty.isRunning = false;
-            PlayerProperty.isSprinting = false;
-            target = Vector3.zero;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.y - 90, 0), 0.2f);
         }
-    }
-    /// <summary>
-    /// Корректирует скорость перед отсановкой
-    /// </summary>
-    private void CorrectSpeed()
-    {
-        if (Vector3.Distance(transform.position, nav.destination) < stopDistance && PlayerProperty.isRunning)
+        if (Input.GetKey(KeyCode.S))
         {
-            PlayerProperty.characterSpeed = Mathf.Lerp(PlayerProperty.characterSpeed, 0, 3 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.y - 180, 0), 0.2f);
         }
-    }
-    /// <summary>
-    /// Определяет угол поворота для персонажа
-    /// </summary>
-    private void PlayerRotate()
-    {
-        if(target != Vector3.zero)
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - transform.position), rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.y + 90, 0), 0.2f);
         }
+        animator.SetFloat("Vertical", x, 0.1f, Time.deltaTime);
+        animator.SetFloat("Horizontal", x, 0.1f, Time.deltaTime);
     }
 }
