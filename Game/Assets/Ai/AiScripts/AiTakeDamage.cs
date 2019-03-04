@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class AiTakeDamage : MonoBehaviour
 {
     public PropertyAi pa;
+    public PlayerProperty player;
     public Image hpbar;
     // Start is called before the first frame update
     void Start()
     {
-        pa = GetComponent<PropertyAi>();
         pa.hp = 1f;
         hpbar.fillAmount = pa.hp;
     }
@@ -20,7 +20,6 @@ public class AiTakeDamage : MonoBehaviour
     {
         if (pa.hp <= 0)
         {
-            Destroy(this.gameObject);
             pa.isdead = true;
         }
     }
