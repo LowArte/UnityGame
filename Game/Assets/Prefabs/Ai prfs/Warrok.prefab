@@ -1764,6 +1764,7 @@ GameObject:
   - component: {fileID: 3274925452219468326}
   - component: {fileID: 2911005386732734652}
   - component: {fileID: 7343527111944367882}
+  - component: {fileID: 4282828670225667575}
   m_Layer: 0
   m_Name: Warrok
   m_TagString: Untagged
@@ -1858,7 +1859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dist: 0
-  pa: {fileID: 11400000, guid: d0fbc6f17227be54ab3291bef22c0b29, type: 2}
+  pa: {fileID: 4282828670225667575}
 --- !u!114 &2911005386732734652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1889,6 +1890,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &4282828670225667575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6562003585472701251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850066d823ede1d4ba7fd5d03eeff75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stop: 0
+  damage: 0
+  speed: 3
+  isdead: 0
+  hp: 1
+  AgrRadius: 30
+  atdist: 3
 --- !u!1 &6602065327918602687
 GameObject:
   m_ObjectHideFlags: 0

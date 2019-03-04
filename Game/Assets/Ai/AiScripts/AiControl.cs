@@ -8,7 +8,7 @@ public class AiControl : MonoBehaviour
     public float dist;
     public PropertyAi pa;
     NavMeshAgent nav;
-   // public PlayerProperty PlayerProperty;
+
     Transform target;
     
     Animator anim;

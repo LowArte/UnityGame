@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ai/Status")]
-public class PropertyAi : ScriptableObject
+public class PropertyAi : MonoBehaviour
 {
     public bool stop;
     public float damage;
@@ -13,5 +12,6 @@ public class PropertyAi : ScriptableObject
     
     public float AgrRadius;
     public float atdist;
+
     
 }
