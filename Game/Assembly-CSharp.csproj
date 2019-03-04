@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Ai\AiScripts\AiControl.cs" />
      <Compile Include="Assets\Ai\AiScripts\AiControls.cs" />
+     <Compile Include="Assets\Ai\AiScripts\AiTakeDamage.cs" />
      <Compile Include="Assets\Ai\Property\PropertyAi.cs" />
      <Compile Include="Assets\GameMode\GameStates.cs" />
      <Compile Include="Assets\GameMode\SpawnEnemies.cs" />
@@ -65,6 +66,8 @@
      <Compile Include="Assets\Player\Scripts\CharacterInput.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterTakeDmg.cs" />
+     <Compile Include="Assets\Prefabs\costumer\shop.cs" />
+     <Compile Include="Assets\Prefabs\scene\selecthero\selecthero.cs" />
      <Compile Include="Assets\Scripts\CamerScript.cs" />
      <Compile Include="Assets\Scripts\Damage.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
