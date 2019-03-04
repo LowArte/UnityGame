@@ -40,8 +40,7 @@ public class SpawnEnemies : MonoBehaviour
             {
                 StartCoroutine(SpawnCreepOnSpawn(spawn as Transform));
             }
-        }
-        StartCoroutine(KillingEnemy());
+        }      
     }
     /// <summary>
     /// Удаляет мобов которые убиты
@@ -55,7 +54,7 @@ public class SpawnEnemies : MonoBehaviour
             int sdvig = 0;
             for(int i=0;i<CurrentEnemys.Count;i++)
             {
-                if (CurrentEnemys[i-sdvig] == null)
+                if (CurrentEnemys[i-sdvig].GetComponent<AiControl>().pa.isdead)
                 {
                     Destroy(CurrentEnemys[i - sdvig]);
                     CurrentEnemys.Remove(CurrentEnemys[i - sdvig]);
@@ -96,5 +95,6 @@ public class SpawnEnemies : MonoBehaviour
             SpawnEnemy(spawn);
             yield return new WaitForSeconds(spawnTime);
         }
+        yield return StartCoroutine(KillingEnemy());
     }
 }

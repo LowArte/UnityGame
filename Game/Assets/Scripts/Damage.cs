@@ -17,10 +17,13 @@ public class Damage : MonoBehaviour
             Enemys.Add(other.gameObject);
     }
 
-    private void Update()
+    private void OnTriggerExit(Collider other)
     {
-        int sdvig = 0;
-        for (int i = 0; i < Enemys.Count; i++)
+        Enemys.Remove(other.gameObject);
+    }
+    public void FindAngleAndSetAttack()
+    {
+        foreach(var other in Enemys)
         {
             if (Enemys[i - sdvig] == null)
             {
